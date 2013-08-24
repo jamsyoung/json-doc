@@ -6,5 +6,5 @@ node_js:
 
 notifications:
   email:
-    - jmeyoung@gmail.com
+    - jmeyoung+travis-ci@gmail.com
 
