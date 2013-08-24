@@ -1,5 +1,8 @@
-# json-doc [![Build Status](https://travis-ci.org/jamsyoung/json-doc.png)][0]
+# json-doc
 This project is in very early stages of development.
+
+[![Build Status](https://travis-ci.org/jamsyoung/json-doc.png)][0]
+[![NPM version](https://badge.fury.io/js/json-doc.png)][1]
 
 
 ## NPM Tasks
@@ -19,3 +22,4 @@ This project is in very early stages of development.
 
 
 [0]: https://travis-ci.org/jamsyoung/json-doc
+[1]: http://badge.fury.io/js/json-doc
