@@ -11,9 +11,8 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/jamsyoung/json-doc.git"
+        "url": "https://github.com/jamsyoung/json-doc"
     },
-    "homepage": "https://github.com/jamsyoung/json-doc",
     "bugs": {
         "url": "https://github.com/jamsyoung/json-doc/issues",
         "email": "jmeyoung@gmail.com"
