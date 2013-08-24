@@ -55,13 +55,13 @@ module.exports = function (grunt) {
                     captureFile: 'code-coverage.html'
                 },
                 src: ['test/**/*.js']
-            },
-            'travis-cov': {
-                options: {
-                    reporter: 'travis-cov'
-                },
-                src: ['test/**/*.js']
-            }
+            }//,
+            // 'travis-cov': {
+            //     options: {
+            //         reporter: 'travis-cov'
+            //     },
+            //     src: ['test/**/*.js']
+            // }
         },
         clean: {
             files: [
