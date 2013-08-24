@@ -1,9 +1,6 @@
 'use strict';
 
-var fs = require('fs'),
-    argv,
-    path = require('path'),
-    colors = require('colors'),
+var argv,
     schema,
     source,
     metadata = require('./package.json'),
@@ -30,3 +27,8 @@ if (argv.h || typeof argv._[1] === 'undefined') {
     });
     process.exit();
 }
+
+source = argv._[0];
+schema = argv._[1];
+
+
