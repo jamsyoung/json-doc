@@ -23,9 +23,7 @@ if (argv.v) {
     console.log('json-doc v' + metadata.version);
     process.exit();
 }
-console.log(JSON.stringify(argv));
-console.log(argv._[0]);
-console.log(argv._[1]);
+
 if (argv.h || typeof argv._[1] === 'undefined') {
     optimist.showHelp(function () {
         optimist.showHelp();
@@ -34,3 +32,4 @@ if (argv.h || typeof argv._[1] === 'undefined') {
     });
     process.exit();
 }
+
