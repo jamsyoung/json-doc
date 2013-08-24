@@ -7,3 +7,5 @@ Gruntfile.js
 code-coverage.html
 
 src/
+test/
+
