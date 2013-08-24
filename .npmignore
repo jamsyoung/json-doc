@@ -1,5 +1,9 @@
-src/
 .editorconfig
 .gitignore
 .jshintrc
 .travis.yml
+
+code-coverage.html
+Gruntfile.js
+
+src/

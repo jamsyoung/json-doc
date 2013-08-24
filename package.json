@@ -5,10 +5,6 @@
     "description": "Outputs an interactive html file like package.json.nodejitsu.com",
     "main": "json-doc.js",
     "bin": "./json-doc.js",
-    "scripts": {
-        "build-man": "mkdir -p man/man1/; node_modules/.bin/marked-man src/man/man1/json-doc.1.md > man/man1/json-doc.1",
-        "postinstall": "./src/build/postinstall.sh"
-    },
     "repository": {
         "type": "git",
         "url": "https://github.com/jamsyoung/json-doc"
@@ -18,8 +14,21 @@
         "email": "jmeyoung@gmail.com"
     },
     "man": "./man/man1/json-doc.1",
+    "scripts": {
+        "build-man": "mkdir -p man/man1/; node_modules/.bin/marked-man src/man/man1/json-doc.1.md > man/man1/json-doc.1",
+        "postinstall": "./src/build/postinstall.sh",
+        "test": "grunt test"
+    },
     "devDependencies": {
-        "marked-man": "0.0.2"
+        "blanket": "1.1.5",
+        "chai": "1.7.2",
+        "grunt": "0.4.1",
+        "grunt-contrib-jshint": "0.6.3",
+        "grunt-contrib-clean": "0.5.0",
+        "grunt-complexity": "0.1.3",
+        "grunt-mocha-test": "0.6.2",
+        "marked-man": "0.0.2",
+        "mocha": "1.12.0"
     },
     "engines": {
         "node": ">=0.10.15",
