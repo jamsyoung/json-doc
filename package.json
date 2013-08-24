@@ -6,7 +6,7 @@
     "main": "json-doc.js",
     "bin": "./json-doc.js",
     "scripts": {
-        "build-man": "node_modules/.bin/marked-man src/man/man1/json-doc.1.md > man/man1/json-doc.1",
+        "build-man": "mkdir -p man/man1/; node_modules/.bin/marked-man src/man/man1/json-doc.1.md > man/man1/json-doc.1",
         "postinstall": "./src/build/postinstall.sh"
     },
     "homepage": "",
