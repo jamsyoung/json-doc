@@ -9,10 +9,14 @@
         "build-man": "mkdir -p man/man1/; node_modules/.bin/marked-man src/man/man1/json-doc.1.md > man/man1/json-doc.1",
         "postinstall": "./src/build/postinstall.sh"
     },
-    "homepage": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jamsyoung/json-doc.git"
+    },
+    "homepage": "https://github.com/jamsyoung/json-doc",
     "bugs": {
-        "url": "",
-        "email": ""
+        "url": "https://github.com/jamsyoung/json-doc/issues",
+        "email": "jmeyoung@gmail.com"
     },
     "man": "./man/man1/json-doc.1",
     "devDependencies": {
@@ -31,6 +35,6 @@
     ],
     "license": {
         "type": "MIT",
-        "url": ""
+        "url": "https://github.com/jamsyoung/json-doc/blob/master/license.md"
     }
 }
