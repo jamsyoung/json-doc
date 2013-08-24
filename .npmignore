@@ -3,7 +3,7 @@
 .jshintrc
 .travis.yml
 
-code-coverage.html
 Gruntfile.js
+code-coverage.html
 
 src/
