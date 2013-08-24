@@ -7,7 +7,7 @@ module.exports = function (grunt) {
         jshint: {
             files: [
                 'Gruntfile.js',
-                'src/**/*.js',
+                'json-doc.js',
                 'test/**/*.js'
             ],
             options: {
@@ -29,13 +29,11 @@ module.exports = function (grunt) {
                 }
             },
             source: {
-                src: [
-                    'src/**/*.js'
-                ],
+                src: ['json-doc.js'],
                 options: {
                     errorsOnly: false,
                     cyclomatic: 1,
-                    halstead: 1,
+                    halstead: 2,
                     maintainability: 100
                 }
             }
