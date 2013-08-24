@@ -2,4 +2,4 @@
 This project is in very early stages of development.
 
 
-[0]: https://travis-ci.org/jamesyoung/json-doc
+[0]: https://travis-ci.org/jamsyoung/json-doc
