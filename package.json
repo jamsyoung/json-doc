@@ -1,0 +1,36 @@
+{
+    "name": "json-doc",
+    "version": "0.1.0",
+    "author": "James Young <jmeyoung@gmail.com> (http://jamsyoung.com)",
+    "description": "Outputs an interactive html file like package.json.nodejitsu.com",
+    "main": "json-doc.js",
+    "bin": "./json-doc.js",
+    "scripts": {
+        "build-man": "node_modules/.bin/marked-man src/man/man1/json-doc.1.md > man/man1/json-doc.1",
+        "postinstall": "./src/build/postinstall.sh"
+    },
+    "homepage": "",
+    "bugs": {
+        "url": "",
+        "email": ""
+    },
+    "man": "./man/man1/json-doc.1",
+    "devDependencies": {
+        "marked-man": "0.0.2"
+    },
+    "engines": {
+        "node": ">=0.10.15",
+        "npm": ">=1.3.5"
+    },
+    "keywords": [
+        "docs",
+        "documentation",
+        "json",
+        "json-schema",
+        "schema"
+    ],
+    "license": {
+        "type": "MIT",
+        "url": ""
+    }
+}
