@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 'use strict';
 
 var fs = require('fs'),
@@ -32,4 +30,3 @@ if (argv.h || typeof argv._[1] === 'undefined') {
     });
     process.exit();
 }
-
