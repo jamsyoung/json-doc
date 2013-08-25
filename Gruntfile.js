@@ -47,7 +47,7 @@ module.exports = function (grunt) {
             test: {
                 options: {
                     reporter: 'spec',
-                    require: 'test/coverage-blanket'
+                    require: 'test/mocha-setup'
                 },
                 src: ['test/mocha/*.js']
             },
