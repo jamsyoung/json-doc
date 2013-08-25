@@ -5,4 +5,4 @@
   * shell script and keep the shebang from blowing things up.
   */
 
-require('./lib/json-doc.js');
+require('./lib/cli-wrapper.js');

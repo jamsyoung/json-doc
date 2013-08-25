@@ -1,16 +1,15 @@
 /* global describe, it */
 'use strict';
 
-// var jsondoc = require('../../json-doc.js -v');
+var consolidator = require('../../lib/consolidator.js');
 
 // should must be defined globally to make the linter happy
 global.should = require('chai').should();
 
 
-describe('Command line arguments', function () {
+describe('Consolidator', function () {
 
-    it('contains spec with an expection', function () {
-        // foo.should.be.a('boolean');
+    it('should generate two sources into one', function () {
+        consolidator.generate('one', 'two').should.equal('onetwo');
     });
-
 });
