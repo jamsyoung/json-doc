@@ -25,18 +25,25 @@ a command line tool.
     $ node json-doc.js [-h|--help]
     $ ndoe json-doc.js [-v|--version]
 
+or
+
+    $ ./json-doc-cli.js source schema
+    $ ./json-doc-cli.js [-h|--help]
+    $ ./json-doc-cli.js [-v|--version]
+
 
 ## Grunt Tasks
-- `grunt test` - Runs all of the completed grunt test tasks.
+There are a few grunt tasks available.
 
-- `grunt lint` - Runs a jshint task.
+- `grunt jshint` - Runs the `jshint` task.
 
-- `grunt coverage` - Runs a code coverage task.  NOTE: There is currently zero
-  coverage since there are no unit tests.
+- `grunt mochaTest` - Runs the `mochaTest:test` and `mochaTest:coverage` tasks.
 
-- `grunt complexity` - Runs a complexity task.
+- `grunt complexity` - Runs the `complexity` task.
 
-- `grunt clean` - Deletes build generated failes.
+- `grunt test` - Runs the `jshint`, `mochaTest`, and `complexity` tasks.
+
+- `grunt` - Runs the `default` task, which is the same as `grunt test`.
 
 
 ## References
