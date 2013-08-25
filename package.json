@@ -17,7 +17,7 @@
     },
     "man": "./man/man1/json-doc.1",
     "scripts": {
-        "test": "grunt travis-test",
+        "test": "grunt test",
         "travis-cov": {
             "threshold": 100
         }
