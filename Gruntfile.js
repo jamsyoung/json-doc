@@ -7,11 +7,11 @@ module.exports = function (grunt) {
         jshint: {
             files: [
                 'Gruntfile.js',
-                'json-doc.js',
+                'json-doc-cli.js',
+                'lib/**/*.js',
                 'test/**/*.js'
             ],
             options: {
-                ignores: [],
                 jshintrc: path.normalize('.jshintrc')
             }
         },
@@ -25,11 +25,11 @@ module.exports = function (grunt) {
                     errorsOnly: false,
                     cyclomatic: 1,
                     halstead: 6,
-                    maintainability: 80
+                    maintainability: 75
                 }
             },
             source: {
-                src: ['json-doc.js'],
+                src: ['lib/**/*.js'],
                 options: {
                     errorsOnly: false,
                     cyclomatic: 1,
@@ -44,7 +44,14 @@ module.exports = function (grunt) {
                     reporter: 'spec',
                     require: 'test/coverage-blanket'
                 },
-                src: ['test/*.js']
+                src: ['test/mocha/*.js']
+            },
+            'test-fun': {
+                options: {
+                    reporter: 'nyan',
+                    require: 'test/coverage-blanket'
+                },
+                src: ['test/mocha/*.js']
             },
             'html-cov': {
                 options: {
@@ -52,20 +59,18 @@ module.exports = function (grunt) {
                     quiet: true,
                     captureFile: 'code-coverage.html'
                 },
-                src: ['test/**/*.js']
-            }//,
-            // 'travis-cov': {
-            //     options: {
-            //         reporter: 'travis-cov'
-            //     },
-            //     src: ['test/**/*.js']
-            // }
+                src: ['test/mocha/*.js']
+            },
+            'travis-cov': {
+                options: {
+                    reporter: 'travis-cov'
+                },
+                src: ['test/mocha/*.js']
+            }
         },
         clean: {
-            files: [
-                'man/man1/*',
-                'node_modules'
-            ]
+            reports: ['code-coverage.html'],
+            dependencies: ['node_modules']
         }
     });
 
@@ -75,9 +80,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.registerTask('lint', ['jshint']);
-    grunt.registerTask('coverage', ['mochaTest']);
+    grunt.registerTask('test', ['lint', 'mochaTest:test', 'mochaTest:html-cov', 'complexity']);
+    grunt.registerTask('travis-test', ['lint', 'mochaTest:test', 'mochaTest:travis-cov', 'complexity']);
 
-    grunt.registerTask('test', ['lint', 'coverage', 'complexity']);
+    grunt.registerTask('clean-reports', ['clean:reports']);
+    grunt.registerTask('clean-dependencies', ['clean:dependencies']);
 
     grunt.registerTask('default', ['test']);
 };

@@ -3,7 +3,10 @@
     "version": "0.1.0",
     "author": "James Young <jmeyoung@gmail.com> (http://jamsyoung.com)",
     "description": "Outputs an interactive html file like package.json.nodejitsu.com",
-    "main": "json-doc.js",
+    "main": "json-doc-cli.js",
+    "bin": {
+        "json-doc": "./json-doc-cli.js"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/jamsyoung/json-doc"
@@ -14,7 +17,7 @@
     },
     "man": "./man/man1/json-doc.1",
     "scripts": {
-        "test": "grunt test",
+        "test": "grunt travis-test",
         "travis-cov": {
             "threshold": 100
         }
