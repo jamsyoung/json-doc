@@ -15,6 +15,6 @@ chai.Assertion.includeStack = true;
 
 // needed for blanket instrumentation with mocha
 require('blanket')({
-    'data-cover-only': ['cli-wrapper.js', 'consolidator.js'],
+    'data-cover-only': ['cli-wrapper.js', 'process.js'],
     'data-cover-never': ['node_modules', 'test']
 });
