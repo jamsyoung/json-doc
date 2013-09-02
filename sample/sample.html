@@ -1,7 +1,6 @@
 <html>
 <head>
-<title>Package.json: an interactive guide</title>
-<link href="http://package.json.nodejitsu.com/css/bootstrap.css" rel="stylesheet">
+<title>title of the page</title>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script>
 var hints = {
@@ -41,140 +40,136 @@ var hints = {
     "node":                "The version of <a href='http://nodejs.org'>node.js</a> this package is <strong>known</strong> to work with. <br/><br/> Like dependencies, this uses <a href='http://semver.org'>Semantic Versioning</a>."
 };
 
-$(document).ready(function(){
-    $('.hint').html(hints['home']);
+$(document).ready(function () {
+    'use strict';
 
-    $('.npm .pair').mouseover(function(e){
-        var el = this;
-        $('.hint').css('top', $(document).scrollTop() + (90) + 'px')
-        var key = $('.key', el).html().replace(/"/g, '');
-        $('.hint').html(hints[key]);
-    });
+    $('.hint').html(hints.home);
 
-    $('.npm .key').click(function(e){
-        var el = this;
-        $('.hint').css('top', $(document).scrollTop() + (90) + 'px')
-        var key = $('.key', el).html().replace(/"/g, '');
+    function action(element) {
+        var key = $('.key', element).html().replace(/"/g, '');
+        $('.hint').css('top', $(document).scrollTop() + 90 + 'px');
         $('.hint').html(hints[key]);
-    });
+    }
+
+    $('.npm .pair').mouseover(function () { action(this); });
+    $('.npm .pair').click(function () { action(this); });
 });
 </script>
 
 <style>
-.npm .pair {
-    cursor:pointer;
-    overflow: hidden;
-}
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #333;
+    }
 
-.npm .pair:hover {
-    background-color:white;
-}
-.pair {
-    padding:0px;
-    margin:0px;
-}
+    code {
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        border: 1px solid silver;
+        font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+        font-size: 14px;
+        padding: 2px;
+    }
 
-.hint {
-    position:absolute;
-    top:90px;
-    font-size:24px;
-    width:500px;
-    line-height:42px;
-}
+    h1 { margin-top: 0; padding-top: 0; }
+
+    pre {
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        border: 1px solid silver;
+        font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+        font-size: 13px;
+        line-height: 20px;
+        margin-right: 20px;
+        max-width: 500px;
+        overflow: auto;
+        padding: 10px;
+    }
+
+    small { color: #999; }
+
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    .npm .pair { cursor: pointer; }
+
+    .npm .pair:hover { background-color: white; }
+
+    .pair { margin: 0; padding: 0; }
+
+    .hint {
+        font-size: 24px;
+        line-height: 42px;
+        overflow: auto;
+        position: absolute;
+        top: 90px;
+        max-width: 500px;
+    }
 </style>
 </head>
 
 <body>
-<div class="navbar navbar-inverse navbar-static-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="brand" href="#">package.json cheatsheet</a>
-            <div class="nav-collapse">
-                <ul class="nav pull-right">
-                    <li><a class="brand" href="http://blog.nodejitsu.com/npm-cheatsheet">also see: the npm cheatsheet</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span12">
-            <h1>package.json<small>An interactive guide</small></h1>
-        </div>
-    </div>
-
-    <div class="row-fluid">
-        <div class="span6">
+<div>
+    <div class="column">
 
 <pre class="npm">
 {
-    <span class="pair"><span class="key">"name"</span>: <span class="value">"http-server"</span></span>,
-    <span class="pair"><span class="key">"preferGlobal"</span>: <span class="value">true</span></span>,
-    <span class="pair"><span class="key">"version"</span>: <span class="value">"0.3.0"</span></span>,
-    <span class="pair"><span class="key">"author"</span>: <span class="value">"Nodejitsu &lt;support@nodejitsu.com&gt;"</span></span>,
-    <span class="pair"><span class="key">"description"</span>: <span class="value">"a simple zero-configuration command-line http server"</span></span>,
-    <span class="pair"><span class="key">"contributors"</span>: [
-        <span class="value">{
-            "name": "Marak Squires",
-            "email": "marak@nodejitsu.com"
-        }</span></span>
-    ],
-    <span class="pair"><span class="key">"bin"</span></span>: {
-        <span class="pair"><span class="key">"http-server"</span>: <span class="value">"./bin/http-server"</span></span>
+    <span class="pair"><span class="key">"name"</span>: "",</span>
+    <span class="pair"><span class="key">"preferGlobal"</span>: true,</span>
+    <span class="pair"><span class="key">"version"</span>: "",</span>
+    <span class="pair"><span class="key">"author"</span>: "",</span>
+    <span class="pair"><span class="key">"description"</span>: "",</span>
+    <span class="pair"><span class="key">"contributors"</span>: [ { "name": "", "email": "" } ],</span>
+    <span class="pair"><span class="key">"bin"</span>: {</span>
+        <span class="pair"><span class="key">"http-server"</span>: ""</span>
     },
-    <span class="pair"><span class="key">"scripts"</span></span>: {
-        <span class="pair"><span class="key">"start"</span>: <span class="value">"node ./bin/http-server"</span></span>,
-        <span class="pair"><span class="key">"test"</span>: <span class="value">"vows --spec --isolate"</span></span>,
-        <span class="pair"><span class="key">"predeploy"</span>: <span class="value">"echo This will be run before deploying the app"</span></span>,
-        <span class="pair"><span class="key">"postdeploy"</span>: <span class="value">"echo This will be run after deploying the app"</span></span>
+    <span class="pair"><span class="key">"scripts"</span>: {</span>
+        <span class="pair"><span class="key">"start"</span>: "",</span>
+        <span class="pair"><span class="key">"test"</span>: "",</span>
+        <span class="pair"><span class="key">"predeploy"</span>: "",</span>
+        <span class="pair"><span class="key">"postdeploy"</span>: ""</span>
     },
-    <span class="pair"><span class="key">"main"</span>: <span class="value">"./lib/http-server"</span></span>,
-    <span class="pair"><span class="key">"repository"</span>: </span>{
-        <span class="pair"><span class="key">"type"</span>: <span class="value">"git"</span></span>,
-        <span class="pair"><span class="key">"url"</span>: <span class="value">"https://github.com/nodejitsu/http-server.git"</span></span>
+    <span class="pair"><span class="key">"main"</span>: "",</span>
+    <span class="pair"><span class="key">"repository"</span>: {</span>
+        <span class="pair"><span class="key">"type"</span>: "",</span>
+        <span class="pair"><span class="key">"url"</span>: ""</span>
     },
-    <span class="pair"><span class="key">"keywords"</span></span>: [
-        <span class="pair"><span class="key">"cli"</span></span>,
-        <span class="pair"><span class="key">"http"</span></span>,
+    <span class="pair"><span class="key">"keywords"</span>: [</span>
+        <span class="pair"><span class="key">"cli"</span>,</span>
+        <span class="pair"><span class="key">"http"</span>,</span>
         <span class="pair"><span class="key">"server"</span></span>
     ],
-    <span class="pair"><span class="key">"dependencies"</span></span>: {
-        <span class="pair"><span class="key">"colors"</span>: <span class="value">"*"</span></span>,
-        <span class="pair"><span class="key">"flatiron"</span>: <span class="value">"0.1.x",</span></span>
-        <span class="pair"><span class="key">"optimist"</span>: <span class="value">"0.2.x",</span></span>
-        <span class="pair"><span class="key">"union"</span>: <span class="value">"0.1.x",</span></span>
-        <span class="pair"><span class="key">"ecstatic"</span>: <span class="value">"0.1.x",</span></span>
-        <span class="pair"><span class="key">"plates"</span>: <span class="value">"https://github.com/flatiron/plates/tarball/master"</span></span>
+    <span class="pair"><span class="key">"dependencies"</span>: {</span>
+        <span class="pair"><span class="key">"colors"</span>: "",</span>
+        <span class="pair"><span class="key">"flatiron"</span>: "",</span>
+        <span class="pair"><span class="key">"optimist"</span>: "",</span>
+        <span class="pair"><span class="key">"union"</span>: "",</span>
+        <span class="pair"><span class="key">"ecstatic"</span>: "",</span>
+        <span class="pair"><span class="key">"plates"</span>: ""</span>
     },
-    <span class="pair"><span class="key">"analyze"</span>: <span class="value">false</span></span>,
-    <span class="pair"><span class="key">"devDependencies"</span></span>: {
-        <span class="pair"><span class="key">"vows"</span>: <span class="value"> "0.5.x"</span></span>,
-        <span class="pair"><span class="key">"request"</span>: <span class="value"> "2.1.x"</span></span>
+    <span class="pair"><span class="key">"analyze"</span>: false,</span>
+    <span class="pair"><span class="key">"devDependencies"</span>: {</span>
+        <span class="pair"><span class="key">"vows"</span>: "",</span>
+        <span class="pair"><span class="key">"request"</span>: ""</span>
     },
-    <span class="pair"><span class="key">"bundledDependencies"</span>: [
-        <span class="value">"union",
-        "ecstatic"</span></span>
-    ],
-    <span class="pair"><span class="key">"license"</span></span>: <span class="value">"MIT"</span>,
-    <span class="pair"><span class="key">"engines"</span>: </span>{
-        <span class="pair"><span class="key">"node"</span>: <span class="value"> ">=0.6"</span></span>
+    <span class="pair"><span class="key">"bundledDependencies"</span>: [ ],</span>
+    <span class="pair"><span class="key">"license"</span>: "",</span>
+    <span class="pair"><span class="key">"engines"</span>: {</span>
+        <span class="pair"><span class="key">"node"</span>: ""</span>
     }
 }
 </pre>
 
-        </div>
-        <div class="span6">
-            <div class="hint">loading...</div>
-        </div>
+
     </div>
-    <div class="row-fluid">
-        <div class="span12">
-            <footer>
-                <p>&copy; Nodejitsu 2012</p>
-            </footer>
-        </div>
+    <div class="column">
+        <div class="hint"></div>
     </div>
 </div>
 </body>
